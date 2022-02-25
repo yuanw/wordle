@@ -1,0 +1,35 @@
+name: wordle
+
+dependencies:
+  - base == 4.*
+  - haskell-say
+
+library:
+  source-dirs: src
+
+executables:
+  wordle:
+    main: Main.hs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - wordle
+
+tests:
+  hello-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - wordle
+    - base == 4.*
+    - hspec
+    - QuickCheck
+    verbatim: |
+      build-tool-depends:
+          hspec-discover:hspec-discover
