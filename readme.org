@@ -1,3 +1,5 @@
 #+TITLE: Readme
 
 Follow along with https://www.youtube.com/watch?v=2djr6ZxQ8VA&list=PLyzwHTVJlRc9Fcinmxe97pHl_pl1B7jH9
+
+using haskell to analysis wordle
