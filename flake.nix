@@ -30,7 +30,7 @@
           ];
         };
         myHaskellEnv = (pkgs.haskellPackages.ghcWithHoogle
-          (p: with p; [ wordle cabal-install ormolu hlint hpack brittany ]));
+          (p: with p; [ wordle cabal-install ormolu hlint hpack brittany ] ++ pkgs.wordle.buildInputs));
 
       in {
         packages = { wordle = pkgs.wordle; };
