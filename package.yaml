@@ -2,8 +2,9 @@ name: wordle
 
 dependencies:
   - base == 4.*
-  - haskell-say
-
+  - deepseq
+  - text
+  - vector
 library:
   source-dirs: src
 
@@ -18,7 +19,7 @@ executables:
     - wordle
 
 tests:
-  hello-test:
+  wordle-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:

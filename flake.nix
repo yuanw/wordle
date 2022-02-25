@@ -29,15 +29,8 @@
             })
           ];
         };
-        myHaskellEnv = (pkgs.haskellPackages.ghcWithHoogle (p:
-          with p; [
-            wordle
-            cabal-install
-            ormolu
-            hlint
-            hpack
-            brittany
-          ]));
+        myHaskellEnv = (pkgs.haskellPackages.ghcWithHoogle
+          (p: with p; [ wordle cabal-install ormolu hlint hpack brittany ]));
 
       in {
         packages = { wordle = pkgs.wordle; };

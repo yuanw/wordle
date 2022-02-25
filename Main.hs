@@ -1,6 +1,9 @@
 module Main where
 
-import Lib
+import Control.DeepSeq (deepseq)
+import Words (guessWords, finalWords)
 
 main :: IO ()
-main = hi
+--main = return () --print finalWords >> print guessWords
+main = do
+  print (guessWords `deepseq` finalWords `deepseq` "Hello world")
