@@ -6,7 +6,7 @@
   # haskell-updates branch.  This temporarily makes Termonad use that branch.
   # When https://github.com/NixOS/nixpkgs/pull/160733 is merged into master,
   # switch back to nixos-unstable.
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/haskell-updates";
+  inputs.nixpkgs.url = "nixpkgs";
   inputs.devshell.url = "github:numtide/devshell";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.gitignore = {
@@ -25,9 +25,11 @@
             (final: prev: {
               haskellPackages = prev.haskellPackages.override {
                 overrides = hself: hsuper: {
-                  #random = hself.callPackage ./random.nix {};
-                  hashable = hself.callPackage ./hashable.nix {};
-                  text = hself.callPackage ./text1.nix {};
+                 # base = hself.callPackage ./base.nix {};
+                  # ghc-bignum-orphans = hself.callPackage ./ghc-bignum-orphans.nix {};
+                  # #random = hself.callPackage ./random.nix {};
+                  # hashable = hself.callPackage ./hashable.nix {};
+                  # text = hself.callPackage ./text1.nix {};
                   wordle = hself.callCabal2nix "wordle"
                     (gitignore.lib.gitignoreSource ./.) { };
                 };
