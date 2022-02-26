@@ -5,6 +5,8 @@ import qualified Data.Vector as V
 import qualified Data.Text as T
 import qualified Data.Map as M
 
+type Location = Int -- Int in range 0 - 4
+
 data LetterInformation
    = LetterNotInWord
    | LetterNitInLocations (S.Set Location)
