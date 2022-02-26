@@ -2,7 +2,9 @@ name: wordle
 
 dependencies:
   - base == 4.*
+  - containers
   - deepseq
+  - template-haskell
   - text
   - vector
 library:
