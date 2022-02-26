@@ -3,7 +3,7 @@ module Wordle where
 import qualified Data.Set as S
 import qualified Data.Vector as V
 import qualified Data.Text as T
-import qualified Data.Map as M
+import qualified Data.Map.Strict as M
 
 type Location = Int -- Int in range 0 - 4
 
