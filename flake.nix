@@ -25,7 +25,8 @@
             (final: prev: {
               haskellPackages = prev.haskellPackages.override {
                 overrides = hself: hsuper: {
-                  # hashable = hself.callPackage ./hashable.nix {};
+                  #random = hself.callPackage ./random.nix {};
+                  hashable = hself.callPackage ./hashable.nix {};
                   text = hself.callPackage ./text1.nix {};
                   wordle = hself.callCabal2nix "wordle"
                     (gitignore.lib.gitignoreSource ./.) { };
