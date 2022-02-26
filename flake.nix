@@ -1,7 +1,7 @@
 {
   description = "virtual environments";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "nixpkgs";
   inputs.devshell.url = "github:numtide/devshell";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.gitignore = {
@@ -20,6 +20,8 @@
             (final: prev: {
               haskellPackages = prev.haskellPackages.override {
                 overrides = hself: hsuper: {
+                  hashable = hself.callPackage ./hashable.nix {};
+                  text = hself.callPackage ./text.nix {};
                   wordle = hself.callCabal2nix "wordle"
                     (gitignore.lib.gitignoreSource ./.) { };
                 };
