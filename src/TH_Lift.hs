@@ -1,4 +1,3 @@
-{-# LANGUAGE TemplateHaskell #-} -- Enable TH
 {-# LANGUAGE StandaloneDeriving #-}
 {-# LANGUAGE DeriveLift #-}
 {-# LANGUAGE FlexibleInstances #-}
