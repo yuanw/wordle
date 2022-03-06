@@ -29,9 +29,11 @@
                   # ghc-bignum-orphans = hself.callPackage ./ghc-bignum-orphans.nix {};
                   # #random = hself.callPackage ./random.nix {};
                   # hashable = hself.callPackage ./hashable.nix {};
-                  # text = hself.callPackage ./text1.nix {};
                   wordle = hself.callCabal2nix "wordle"
-                    (gitignore.lib.gitignoreSource ./.) { };
+                    (gitignore.lib.gitignoreSource ./.) {
+
+                   text = hself.callPackage ./text1.nix {};
+                    };
                 };
               };
               wordle = final.haskell.lib.justStaticExecutables
